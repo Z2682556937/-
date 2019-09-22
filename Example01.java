@@ -1,35 +1,24 @@
-class Student {
-	private String name;
-	private int grade;
-	public String getName() {
-		return name;
+// 定义Animal类
+class Animal {
+	String name; // 定义name属性
+	// 定义动物叫的方法
+	void shout() {
+		System.out.println("动物发出叫声");
 	}
-	public void setName(String stuName) {
-		name=stuName;
-	}
-	public int getGrade() {
-		return grade;
-	}
-	public void setGrade(int stuGrade) {
-		if(stuGrade<0) {
-			System.out.println("输入成绩为负！！！");
-		}else {
-			grade=stuGrade;
-		}
-	}
-	public void introduce() {
-		System.out.println("我叫"+name+"，成绩为"+grade);
-	}
-
 }
-public class Example01 {
-
-	public static void main(String[] args) {
-		Student stu=new Student();
-		stu.setName("李洋");
-		stu.setGrade(99);
-		stu.introduce();
-
+// 定义Dog类继承Animal类
+class Dog extends Animal {
+	// 定义一个打印name的方法
+	public void printName() {
+		System.out.println("name=" + name);
 	}
-
+}
+// 定义测试类
+public class Example01 {
+	public static void main(String[] args) {
+		Dog dog = new Dog();  // 创建一个Dog类的实例对象
+		dog.name = "沙皮狗";   // 为Dog类的name属性进行赋值
+		dog.printName();      // 调用dog类的getInfo()方法
+		dog.shout();           // 调用dog类继承来的shout()方法
+	}
 }
